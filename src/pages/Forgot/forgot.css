@@ -1,0 +1,43 @@
+.forgot-password-container {
+      margin: auto;
+      height: 12rem;
+      margin-top: 5rem;
+      width: 25rem;
+      border-radius: 0.2rem;
+      background-color: var(--secondary-color);
+      padding: 1rem;
+      box-shadow: 2px 2px 79px -44px var(--box-shadow-black-color);
+}
+
+.forgot-title {
+      text-align: center;
+      color: var(--primary-color);
+}
+
+.change-pass {
+      margin: 1.5rem;
+
+}
+
+.change-pass input {
+      padding: 0.5rem;
+      width: 100%;
+      border-radius: 2.5rem;
+      border: 2px solid var(--primary-color);
+}
+
+.submit-button {
+      border: none;
+      padding: 0.4rem;
+      width: 90%;
+      font-size: 1.2rem;
+      font-weight: 900;
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+      margin-left: 1.5rem;
+}
+
+.submit-button .forgot-link {
+      text-decoration: none;
+
+}

@@ -1,0 +1,54 @@
+.price-cont {
+      height: 40%;
+      width: 30%;
+}
+
+.price-details-title {
+      margin: 1.5rem;
+      font-size: 1.2rem;
+      font-weight: bolder;
+      border-bottom-style: solid;
+}
+
+.price-des-size {
+      font-size: 1.5rem;
+      color: var(--black-color);
+}
+
+.lists {
+      padding: 0.5em;
+      border-bottom: 0.5px solid var(--black-color);
+      list-style-type: none;
+}
+
+.price-text {
+      font-size: medium;
+}
+
+.space-between {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+
+.save-price {
+      margin: 1rem 0 0 3rem;
+      font-size: 1rem;
+      font-weight: 900;
+}
+
+.total-amount {
+      font-weight: bolder;
+}
+
+.place-order {
+      padding: 0.6rem;
+      width: 100%;
+      margin-top: 1.2rem;
+      color: var(--secondary-color);
+      background-color: var(--primary-color);
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      font-weight: 900;
+}

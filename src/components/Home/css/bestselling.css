@@ -1,0 +1,58 @@
+.home-heading-h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--black-color);
+      font-family: 'Poppins', sans-seri;
+      border-bottom: 2px;
+}
+
+.home-heading-h2:hover {
+      color: var(--primary-color);
+}
+
+.best-sell-para {
+      font-size: 0.8rem;
+      width: 50%;
+      margin: auto;
+      margin-top: 1rem;
+      text-align: center;
+      color: var(--primary-color);
+}
+
+.best-sell-cont {
+      position: relative;
+      height: 15rem;
+      width: 15rem;
+      border-radius: 0.2rem;
+      margin: 2rem;
+
+}
+
+.best-sell-cont img {
+      width: 100%;
+      height: 100%;
+}
+
+.featured-card-cont {
+      width: 100%;
+      height: auto;
+      display: flex;
+
+
+}
+
+#toggle-img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      opacity: 0;
+      transition: all 0.3s;
+}
+
+.best-sell-cont:hover>#toggle-img {
+      opacity: 1;
+
+}
