@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@100&family=Poppins:wght@100;300&family=Recursive:wght@600&family=Satisfy&display=swap');
+
+
+.navigation-cont {
+      height: 4rem;
+      width: 100%;
+}
+
+.navigation-cont {
+      background-color: var(--primary-color);
+
+}
+
+.name-of-site {
+      color: var(--secondary-color);
+      font-family: 'Satisfy', cursive;
+}
+
+.fa-search {
+      color: var(--primary-color);
+}
+
+.nav-icon {
+      color: var(--secondary-color);
+}
+
+.nav-button .login-button {
+      color: var(--secondary-color);
+}
+
+.nav-button {
+
+      text-decoration: none;
+}

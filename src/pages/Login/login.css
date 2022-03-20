@@ -1,0 +1,97 @@
+.login-page-container {
+      margin: auto;
+      height: 22rem;
+      margin-top: 5rem;
+      width: 25rem;
+      border-radius: 0.2rem;
+      background-color: var(--secondary-color);
+      padding: 1rem;
+      box-shadow: 2px 2px 79px -44px var(--box-shadow-black-color);
+
+
+}
+
+.login-title {
+      color: var(--primary-color);
+      font-size: 2rem;
+      text-align: center;
+      font-weight: 900;
+}
+
+.login-form-cont {
+      width: 90%;
+      margin-top: 1rem;
+}
+
+.login-form-cont input {
+      padding: 10px 20px 10px 5px;
+      border-radius: 2rem;
+      border: 2px solid var(--primary-color);
+      color: var(--navyblue-color);
+      padding-left: 1rem;
+
+}
+
+.email {
+      padding: 1rem;
+      color: var(--black-color);
+      font-weight: 600;
+}
+
+.email input,
+.password input {
+      width: 20rem;
+      font-size: 1rem;
+}
+
+.password input {
+      margin-left: 1rem;
+}
+
+.password {
+      color: var(--black-color);
+      font-weight: 600;
+}
+
+.options {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 5px;
+}
+
+.remember-me label {
+      color: var(--black-color);
+      font-weight: 600;
+
+}
+
+.forgot-password .forgot-pass {
+      text-decoration: none;
+      color: var(--primary-color);
+      font-weight: 600;
+}
+
+.login-button {
+      margin: 1rem;
+      border: none;
+      padding: 0.4rem;
+      width: 100%;
+      font-size: 1.2rem;
+      font-weight: 900;
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+
+}
+
+.login-button .signin {
+      text-decoration: none;
+      color: var(--secondary-color);
+}
+
+.signup-link .signup {
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-left: 5rem
+}

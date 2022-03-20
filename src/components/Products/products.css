@@ -1,0 +1,113 @@
+.add-to-cart-button {
+      background-color: var(--secondary-color);
+      color: var(--black-color);
+      padding: 0.3rem;
+      width: 40%;
+      font-size: 0.5rem;
+      font-weight: 800;
+      margin-left: 3rem;
+
+}
+
+.add-to-cart-button:hover {
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+      border: none;
+      outline: none;
+}
+
+
+.add-to-cart-button .fa-shopping-cart {
+      color: var(--black-color);
+
+}
+
+.wishlist .like-dislike-icon {
+      color: var(--primary-color);
+}
+
+.card-images {
+      position: relative;
+      width: 100%;
+      height: 12rem;
+      border-radius: 0.2rem;
+
+
+}
+
+.card-images img {
+      width: 100%;
+      height: 100%;
+}
+
+
+
+#toggle-product-img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      opacity: 0;
+      transition: all 0.3s;
+}
+
+.card-images:hover>#toggle-product-img {
+      opacity: 1;
+
+}
+
+
+.card-containers {
+      width: 14rem;
+      height: 16rem;
+
+      margin: 2rem;
+
+
+
+}
+
+.card-img:hover {
+      transform: scale(1.2);
+}
+
+.product-brand-cont {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+
+}
+
+.product-brand-cont .card-title {
+      font-size: 0.7rem;
+      margin-top: 0.5rem;
+      font-weight: 600;
+      color: var(--primary-color);
+
+
+}
+
+
+.rating-con {
+      border: 2px solid grey;
+      width: 1.4rem;
+      height: 1.4rem;
+      left: 0;
+      bottom: 2rem;
+      position: relative;
+      font-size: 0.9rem;
+
+
+
+}
+
+.rating {
+      top: 0.4rem;
+      font-size: 0.6rem;
+      color: orange;
+      position: absolute;
+
+
+}

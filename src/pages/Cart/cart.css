@@ -1,0 +1,12 @@
+.mycart-brand-container {
+      display: flex;
+      justify-content: space-around;
+}
+
+.cart-title {
+      text-align: center;
+      color: var(--primary-color);
+      margin-top: 1rem;
+      font-size: 2rem;
+      font-weight: bold;
+}

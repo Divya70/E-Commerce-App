@@ -1,0 +1,88 @@
+.signup-page-container {
+      height: 40%;
+      width: 30rem;
+      border-radius: 0.2rem;
+      margin: auto;
+      margin-top: 3rem;
+      padding: 1rem;
+      background-color: var(--secondary-color);
+      box-shadow: 2px 2px 79px -44px var(--box-shadow-black-color);
+}
+
+.signup-title {
+      color: var(--primary-color);
+      font-size: 2rem;
+      text-align: center;
+      font-weight: 900;
+
+
+}
+
+.signup-form-cont {
+      width: 100%;
+      padding: 2rem;
+}
+
+.signup-form-cont input {
+      width: 90%;
+      font-size: 0.8rem;
+      padding: 10px 20px 10px 5px;
+      border-radius: 2rem;
+      border: 2px solid var(--primary-color);
+      color: var(--black-color);
+      padding-left: 2rem;
+}
+
+.emails {
+      color: var(--black-color);
+      font-weight: 600;
+}
+
+.emails input {
+      margin: 1rem;
+}
+
+.password {
+      color: var(--black-color);
+      font-weight: 600;
+}
+
+
+.password input {
+      margin-bottom: 1rem;
+}
+
+.confirm-password input,
+.username input {
+      margin-left: 1rem;
+}
+
+.form-button {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: flex-end;
+
+}
+
+.signup-button {
+      margin: 1rem;
+      border: none;
+      padding: 0.6rem;
+      background-color: var(--primary-color);
+      width: 90%;
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--secondary-color);
+      box-shadow: 2px 2px 79px -44px var(--box-shadow-black-color);
+}
+
+.signup-button .signup-link {
+      text-decoration: none;
+
+}
+
+.redirect-to-login {
+      text-align: center;
+      color: var(--primary-color);
+
+}
