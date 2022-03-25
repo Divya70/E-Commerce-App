@@ -1,11 +1,18 @@
 import React from "react";
 import "./products.css";
-const Products = (props) => {
+const Products = ({
+  imgsrc,
+  rating,
+  name,
+  categoryName,
+  price,
+  discountprice,
+}) => {
   return (
     <>
       <div className="card-containers">
         <div className="card-images">
-          <img src={props.imgsrc} />
+          <img src={imgsrc} />
           <img
             id="toggle-product-img"
             src="/images/banana.jpg"
@@ -14,18 +21,18 @@ const Products = (props) => {
           <div className="wishlist item-wishlist">
             <i className="fas fa-heart dismiss like-dislike-icon"></i>
             <div className="rating-con">
-              {props.rating}
+              {rating}
               <i className="fa-solid fa-star  rating"></i>
             </div>
           </div>
         </div>
         <div className="product-brand-cont">
-          <p className="card-title">{props.name}</p>
-          <p className="card-title">{props.fruitcategory}</p>
+          <p className="card-title">{name}</p>
+          <p className="card-title">{categoryName}</p>
         </div>
         <div className="card-price-cont">
-          <div className="price">Rs.{props.price}</div>
-          <div className="price-discount">Rs.{props.discountprice}</div>
+          <div className="price">Rs.{price}</div>
+          <div className="price-discount">Rs.{discountprice}</div>
           <div className="price-OFF">50% OFF</div>
         </div>
 

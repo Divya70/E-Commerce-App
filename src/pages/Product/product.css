@@ -20,6 +20,15 @@
       justify-content: space-between;
 }
 
+.filter-sidebar-heading .clear-filter {
+      font-size: 1rem;
+      font-weight: 700;
+}
+
+.filter-sidebar-heading .clear-filter:hover {
+      color: var(--primary-color);
+}
+
 .products-title {
       text-align: center;
       color: var(--black-color);

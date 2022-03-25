@@ -1,6 +1,9 @@
 import React from "react";
 import "./css/price.css";
+import { useProduct } from "../../Context/Product-Context";
 const Price = () => {
+  const { state, dispatch } = useProduct();
+
   return (
     <>
       <div className="filter-sidebar-price">
@@ -17,7 +20,10 @@ const Price = () => {
           type="range"
           min="100"
           max="2000"
-          className="price-range"
+          value={state.price}
+          onChange={(e) => {
+            dispatch({ type: "PRICE", payload: e.target.value });
+          }}
           style={{ width: "80%" }}
         />
       </div>
