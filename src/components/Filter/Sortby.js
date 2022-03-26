@@ -14,6 +14,7 @@ const Sortby = () => {
             type="radio"
             name="radio"
             id="low-to-high"
+            checked={state.sortBy === "LOW_TO_HIGH"}
             onChange={() => dispatch({ type: "LOW_TO_HIGH" })}
           />
           <label htmlFor="low-to-high"> Price - Low to High</label>
