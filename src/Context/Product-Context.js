@@ -1,7 +1,7 @@
 import { productReduce } from "../Reducer/Product-Reducer";
 import { createContext, useContext, useReducer } from "react";
 
-const ProductContext = createContext();
+const ProductContext = createContext([]);
 const ProductProvider = ({ children }) => {
   const [state, dispatch] = useReducer(productReduce, {
     initialValue: [],

@@ -1,8 +1,6 @@
 import React from "react";
 import "./cart.css";
-import { Navbar } from "../../components/Navbar/Navbar";
-import { ProductDetails } from "../../components/Cart/ProductDetails/ProductDetails";
-import { PriceDetails } from "../../components/Cart/PriceDetails/PriceDetails";
+import { Navbar, ProductDetails, PriceDetails } from "../../components";
 const Cart = () => {
   return (
     <>
