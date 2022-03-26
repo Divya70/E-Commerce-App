@@ -3,7 +3,7 @@ import "./pricedetails.css";
 const PriceDetails = () => {
   return (
     <>
-      <div className="cart-container price-cont">
+      <div className="cart-container" id="price-cont">
         <h1 className="price-details-title">PRICE DETAILS</h1>
         <ul>
           <li className="lists price-text space-between price-des-size">
