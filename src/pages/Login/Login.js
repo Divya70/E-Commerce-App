@@ -1,18 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import { useAuth } from "../../Context/Auth-Context";
+import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
-import { Link } from "react-router-dom";
 const Login = () => {
+  const { authDispatch } = useAuth();
+  const navigateProduct = useNavigate();
+  const [loginData, setLoginData] = useState({ email: "", password: "" });
+  const getLoginData = (e) => {
+    const { name, value } = e.target;
+    setLoginData({ ...loginData, [name]: value });
+  };
+  const testUserCredential = {
+    email: "joeytribbiani@gmail.com",
+    password: "joeytribbiani",
+  };
+  const testCredential = (e) => {
+    e.preventDefault();
+    setLoginData(testUserCredential);
+  };
+
+  const loginHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post("/api/auth/login", {
+        email: loginData.email,
+        password: loginData.password,
+      });
+      if (res.status === 200) {
+        localStorage.setItem("token", res.data.encodedToken);
+        localStorage.setItem("user", res.data.foundUser);
+        navigateProduct("/product");
+        authDispatch({
+          type: "LOG_IN",
+          token: res.data.token,
+          user: res.data.user,
+        });
+      } else {
+        alert("Please Enter Correct Email and Password!");
+      }
+    } catch (error) {
+      console.log("Erro:", error);
+    }
+  };
+
   return (
     <>
       <div className="login-page-container">
         <h1 className="login-title">LOGIN</h1>
         <div className="login-form-cont">
           <div className="email">
-            <input type="email" placeholder="Username or Email" required />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              value={loginData.email}
+              onChange={getLoginData}
+              placeholder="Username or Email"
+              required
+            />
           </div>
           <div className="password">
             <input
               type="password"
+              name="password"
+              id="Password"
+              value={loginData.password}
+              onChange={getLoginData}
               className="login-password input-field"
               placeholder="User Password"
               required
@@ -29,10 +83,17 @@ const Login = () => {
               </Link>
             </div>
           </div>
-
-          <Link to="/product" className="signin">
-            <button className="login-button">Login</button>
-          </Link>
+          <div className="login-test-user">
+            <button
+              className="login-button login-test-credential"
+              onClick={testCredential}
+            >
+              Login With Test Credentials
+            </button>
+            <button className="login-button" onClick={loginHandler}>
+              Login
+            </button>
+          </div>
 
           <div className="signup-link">
             <Link to="/signup" className="signup">
