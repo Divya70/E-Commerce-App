@@ -51,7 +51,7 @@ const Products = ({ item }) => {
           <div className="price-discount">Rs.{item.discountprice}</div>
           <div className="price-OFF">50% OFF</div>
         </div>
-        {cartItem.some((addedItem) => addedItem._id === item._id) ? (
+        {cartItem.find((addedItem) => addedItem._id === item._id) ? (
           <button className=" add-to-cart-button">
             <Link className="cart-secondary" to="/cart">
               <i className="fas fa-shopping-cart"></i> GO TO CART
