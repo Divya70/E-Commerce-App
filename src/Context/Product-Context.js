@@ -9,6 +9,7 @@ const ProductProvider = ({ children }) => {
     categoryName: [],
     price: 2000,
     rating: "",
+    cartItem: [],
   });
   return (
     <ProductContext.Provider value={{ state, dispatch }}>

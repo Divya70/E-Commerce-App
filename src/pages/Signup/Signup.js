@@ -27,10 +27,11 @@ const Signup = () => {
         authDispatch({
           type: "SIGN_UP",
           payload: {
-            token: res.data.token,
-            user: res.data.user,
+            token: res.data.encodedToken,
+            user: res.data.createdUser,
           },
         });
+        console.log(res);
         if (res.status === 201) {
           localStorage.setItem("token", res.data.encodedToken);
           localStorage.setItem("user", JSON.stringify(res.data.createdUser));

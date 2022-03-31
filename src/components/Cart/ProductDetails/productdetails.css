@@ -1,3 +1,16 @@
 .cart-container {
       height: 14rem;
 }
+
+.product-des {
+      color: var(--primary-color);
+}
+
+#remove-from-cart-btn {
+      background-color: var(--primary-color);
+}
+
+#move-to-wishlist-btn {
+      color: var(--primary-color);
+      border: 2px solid var(--primary-color);
+}

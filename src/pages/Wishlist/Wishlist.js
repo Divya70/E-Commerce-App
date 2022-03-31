@@ -9,18 +9,8 @@ const Wishlist = () => {
       <Navbar />
       <h1 className="wishlist-heading">My WishList</h1>
       <div className="product-card-cont">
-        {ProductData.slice(6, 12).map((val, index) => {
-          return (
-            <Products
-              imgsrc={val.imgsrc}
-              name={val.name}
-              fruitcategory={val.fruitcategory}
-              price={val.price}
-              discountprice={val.discountprice}
-              rating={val.rating}
-              key={index}
-            />
-          );
+        {ProductData.slice(6, 12).map(({ item }) => {
+          return <Products key={item.id} item={item} />;
         })}
       </div>
     </>
