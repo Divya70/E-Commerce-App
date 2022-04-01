@@ -81,12 +81,14 @@
       font-weight: 900;
       background-color: var(--primary-color);
       color: var(--secondary-color);
+      cursor: pointer;
 
 }
 
 .login-button .signin {
       text-decoration: none;
       color: var(--secondary-color);
+      cursor: pointer;
 }
 
 .signup-link .signup {
@@ -98,4 +100,5 @@
 
 .login-test-credential {
       font-size: 1rem;
+      cursor: pointer;
 }

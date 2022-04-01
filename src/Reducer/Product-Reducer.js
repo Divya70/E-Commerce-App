@@ -42,6 +42,21 @@ const productReduce = (state, action) => {
         price: 2000,
         rating: "",
       };
+    case "GET_CART":
+      return { ...state, cartItem: action.payload };
+    case "ADD_TO_CART": {
+      return { ...state, cartItem: action.payload };
+    }
+    case "REMOVE_FROM_CART":
+      return { ...state, cartItem: action.payload };
+    case "INCREASE_QUANTITY":
+      return { ...state, cartItem: action.payload };
+    case "DECREASE_QUANTITY":
+      return { ...state, cartItem: action.payload };
+    case "LOGOUT":
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+      return { ...state, cartItem: [] };
     default:
       return "Error";
   }

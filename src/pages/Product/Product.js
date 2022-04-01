@@ -49,30 +49,9 @@ const Product = () => {
         <div className="products-sec">
           <h1 className="products-title">Showing My All Products Here!</h1>
           <div className="product-card-cont">
-            {ratingList.map(
-              ({
-                imgsrc,
-                name,
-                categoryName,
-                price,
-                discountprice,
-                rating,
-                _id,
-              }) => {
-                return (
-                  <Products
-                    imgsrc={imgsrc}
-                    name={name}
-                    categoryName={categoryName}
-                    price={price}
-                    discountprice={discountprice}
-                    rating={rating}
-                    key={_id}
-                    products={ratingList}
-                  />
-                );
-              }
-            )}
+            {ratingList.map((item) => {
+              return <Products key={item._id} item={item} />;
+            })}
           </div>
         </div>
       </div>

@@ -29,18 +29,20 @@ const Login = () => {
       });
       if (res.status === 200) {
         localStorage.setItem("token", res.data.encodedToken);
-        localStorage.setItem("user", res.data.foundUser);
+        localStorage.setItem("user", JSON.stringify(res.data.foundUser));
         navigateProduct("/product");
         authDispatch({
           type: "LOG_IN",
-          token: res.data.token,
-          user: res.data.user,
+          payload: {
+            token: res.data.encodedToken,
+            user: res.data.foundUser,
+          },
         });
       } else {
         alert("Please Enter Correct Email and Password!");
       }
     } catch (error) {
-      console.log("Erro:", error);
+      console.log("Error:", error.res);
     }
   };
 

@@ -9,6 +9,15 @@
 
 }
 
+.cart-secondary {
+      text-decoration: none;
+      outline: none;
+}
+
+.cart-secondary:hover {
+      color: var(--secondary-color);
+}
+
 .add-to-cart-button:hover {
       background-color: var(--primary-color);
       color: var(--secondary-color);
