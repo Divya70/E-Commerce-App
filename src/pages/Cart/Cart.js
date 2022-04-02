@@ -3,6 +3,7 @@ import "./cart.css";
 import { Navbar, ProductDetails, PriceDetails } from "../../components";
 import { useProduct } from "../../Context/Product-Context";
 import axios from "axios";
+import { Link } from "react-router-dom";
 const Cart = () => {
   const { state, dispatch } = useProduct();
   const getProductInCart = async () => {
@@ -19,7 +20,6 @@ const Cart = () => {
       console.log("Error:", error);
     }
   };
-
   useEffect(() => {
     getProductInCart();
   }, []);
@@ -43,7 +43,16 @@ const Cart = () => {
             <PriceDetails />
           </div>
         </>
-      ) : null}
+      ) : (
+        <>
+          <div className="empty-cart-cont">
+            <h1>Cart is Empty ☹</h1>
+            <Link to="/product" className="keep-shopping-link">
+              Keep Shopping
+            </Link>
+          </div>
+        </>
+      )}
     </>
   );
 };

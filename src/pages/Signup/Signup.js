@@ -3,6 +3,7 @@ import axios from "axios";
 import { useAuth } from "../../Context/Auth-Context";
 import { Link, useNavigate } from "react-router-dom";
 import "./signup.css";
+import { Navbar } from "../../components";
 const Signup = () => {
   const navigateLogin = useNavigate();
   const { authDispatch } = useAuth();
@@ -47,6 +48,7 @@ const Signup = () => {
 
   return (
     <>
+      <Navbar />
       <div className="signup-page-container">
         <h1 className="signup-title">SIGN UP</h1>
         <div className="signup-form-cont">

@@ -1,10 +1,7 @@
 import { useEffect } from "react";
 import axios from "axios";
 import "./product.css";
-import { Category } from "../../components/Filter/Category";
-import { Products } from "../../components/Products/Products";
-import { Navbar } from "../../components/Navbar/Navbar";
-import { Footer } from "../../components/Footer/Footer";
+import { Category, Products, Navbar, Footer } from "../../components";
 import { useProduct } from "../../Context/Product-Context";
 import {
   getSortedList,

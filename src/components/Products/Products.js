@@ -6,8 +6,9 @@ import "./products.css";
 const Products = ({ item }) => {
   const { state, dispatch } = useProduct();
   const { cartItem } = state;
+  const { wishlistItem } = state;
+  const token = localStorage.getItem("token");
   const cartBtnHandler = async (item) => {
-    const token = localStorage.getItem("token");
     const addToCartResponse = await axios.post(
       "/api/user/cart",
       { product: item },
@@ -24,6 +25,39 @@ const Products = ({ item }) => {
       console.log("error");
     }
   };
+  const wishlistHandler = async (item) => {
+    const setWishlistResponse = await axios.post(
+      "/api/user/wishlist",
+      { product: item },
+      {
+        headers: { authorization: token },
+      }
+    );
+    if (setWishlistResponse.status === 201) {
+      dispatch({
+        type: "ADD_TO_WISHLIST",
+        payload: setWishlistResponse.data.wishlist,
+      });
+    } else {
+      console.log("error");
+    }
+  };
+  const removeLikedItemHandler = async () => {
+    try {
+      const dislikeItemResponse = await axios.delete(
+        `/api/user/wishlist/${item._id}`,
+        {
+          headers: { authorization: token },
+        }
+      );
+      dispatch({
+        type: "REMOVE_FROM_WISHLIST",
+        payload: dislikeItemResponse.data.wishlist,
+      });
+    } catch (err) {
+      console.log(err.response);
+    }
+  };
   return (
     <>
       <div className="card-containers">
@@ -31,11 +65,22 @@ const Products = ({ item }) => {
           <img src={item.imgsrc} />
           <img
             id="toggle-product-img"
-            src="/images/banana.jpg"
+            src={item.toggleImage}
             alt="toggle img"
           />
           <div className="wishlist item-wishlist">
-            <i className="fas fa-heart dismiss like-dislike-icon"></i>
+            {wishlistItem.find((likedItem) => likedItem._id === item._id) ? (
+              <i
+                className="fas fa-heart dismiss like-dislike-icon"
+                style={{ color: "red" }}
+                onClick={removeLikedItemHandler}
+              ></i>
+            ) : (
+              <i
+                className="fas fa-heart dismiss like-dislike-icon"
+                onClick={() => wishlistHandler(item)}
+              ></i>
+            )}
             <div className="rating-con">
               {item.rating}
               <i className="fa-solid fa-star  rating"></i>

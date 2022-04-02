@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import { Link } from "react-router-dom";
 import { useProduct } from "../../../Context/Product-Context";
 import "./productdetails.css";
 
@@ -55,7 +56,30 @@ const ProductDetails = ({ item }) => {
       console.log("Error:", error);
     }
   };
-
+  const wishlistMove = async (item) => {
+    const setWishlistResponse = await axios.post(
+      "/api/user/wishlist",
+      { product: item },
+      {
+        headers: { authorization: token },
+      }
+    );
+    const removefromCartFun = await axios.delete(`/api/user/cart/${item._id}`, {
+      headers: { authorization: token },
+    });
+    dispatch({
+      type: "REMOVE_FROM_CART",
+      payload: removefromCartFun.data.cart,
+    });
+    if (setWishlistResponse.status === 201) {
+      dispatch({
+        type: "ADD_TO_WISHLIST",
+        payload: setWishlistResponse.data.wishlist,
+      });
+    } else {
+      console.log("error");
+    }
+  };
   return (
     <>
       <div className="cart-container">
@@ -98,12 +122,15 @@ const ProductDetails = ({ item }) => {
               >
                 Remove From Cart
               </button>
-              <button
-                className="icon-btn cart-button"
-                id="move-to-wishlist-btn"
-              >
-                Move to Wishlist
-              </button>
+              <Link to="/wishlist">
+                <button
+                  className="icon-btn cart-button"
+                  id="move-to-wishlist-btn"
+                  onClick={() => wishlistMove(item)}
+                >
+                  Move to Wishlist
+                </button>
+              </Link>
             </div>
           </div>
         </div>

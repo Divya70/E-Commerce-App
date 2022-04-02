@@ -12,6 +12,12 @@ const authReducer = (authState, authAction) => {
         token: authAction.payload.token,
         user: authAction.payload.user,
       };
+    case "LOG_TOKEN":
+      return {
+        ...authState,
+        token: authAction.payload.token,
+        user: authAction.payload.user,
+      };
   }
 };
 export { authReducer };

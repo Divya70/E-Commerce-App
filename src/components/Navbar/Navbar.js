@@ -1,8 +1,10 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useProduct } from "../../Context/Product-Context";
+import { useAuth } from "../../Context/Auth-Context";
 const Navbar = () => {
   const { state, dispatch } = useProduct();
+  const { authState } = useAuth();
   return (
     <>
       <nav className="navigation-cont">
@@ -18,6 +20,9 @@ const Navbar = () => {
         <div className="nav-buttons-cont">
           <Link to="/wishlist" className="nav-button nav-icons-name">
             <i className="fas fa-heart nav-icon"></i>
+            {state.wishlistItem.length !== 0 ? (
+              <span className="icon-badge">{state.wishlistItem.length}</span>
+            ) : null}
           </Link>
           <Link to="/cart" className="nav-button nav-icons-name">
             <i className="fas fa-shopping-cart nav-icon"></i>
@@ -25,7 +30,7 @@ const Navbar = () => {
               <span className="icon-badge">{state.cartItem.length}</span>
             ) : null}
           </Link>
-          {localStorage.getItem("token") === "" ? (
+          {authState.token === null ? (
             <div className="nav-button login-btn">
               <Link to="/login" className="login-button">
                 Login

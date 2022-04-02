@@ -13,6 +13,7 @@ export const products = [
     categoryName: "Seasonal Fruit",
     price: "100",
     discountprice: "200",
+    toggleImage: "/images/toggleimg1.jpeg",
     rating: 4,
   },
   {
@@ -22,6 +23,7 @@ export const products = [
     categoryName: "Regular Fruit",
     price: "200",
     discountprice: "400",
+    toggleImage: "/images/toggleimg2.jpeg",
     rating: 4,
   },
   {
@@ -31,6 +33,7 @@ export const products = [
     categoryName: "Regular Fruit",
     price: " 400",
     discountprice: "800",
+    toggleImage: "/images/toggleimg3.jpg",
     rating: 5,
   },
   {
@@ -40,6 +43,7 @@ export const products = [
     categoryName: "Regular Fruit",
     price: "700",
     discountprice: "1400",
+    toggleImage: "/images/toggleimg4.jpg",
     rating: 4,
   },
   {
@@ -49,6 +53,7 @@ export const products = [
     categoryName: "Regular Fruit",
     price: "900",
     discountprice: "1800",
+    toggleImage: "/images/sprout.webp",
     rating: 4,
   },
   {
@@ -58,6 +63,7 @@ export const products = [
     categoryName: "Seasonal Fruit",
     price: "1000",
     discountprice: "2000",
+    toggleImage: "/images/rambutan.webp",
     rating: 5,
   },
   {
@@ -67,6 +73,7 @@ export const products = [
     categoryName: "Regular Fruit",
     price: "1200",
     discountprice: "2400",
+    toggleImage: "/images/mongosteen.webp",
     rating: 3,
   },
   {
@@ -76,6 +83,7 @@ export const products = [
     categoryName: "Regular Fruit",
     price: "1000",
     discountprice: "2000",
+    toggleImage: "/images/lychee.webp",
     rating: 4,
   },
   {
@@ -85,6 +93,7 @@ export const products = [
     categoryName: "Regular Fruit",
     price: "800",
     discountprice: "1600",
+    toggleImage: "/images/berrey.jpg",
     rating: 4,
   },
   {
@@ -94,6 +103,7 @@ export const products = [
     categoryName: "Seasonal Fruit",
     price: "1000",
     discountprice: "2000",
+    toggleImage: "/images/product5.jpg",
     rating: 5,
   },
   {
@@ -103,6 +113,7 @@ export const products = [
     categoryName: "Regular Fruit",
     price: "1500",
     discountprice: "3000",
+    toggleImage: "/images/kiwi.webp",
     rating: 5,
   },
   {
@@ -112,6 +123,7 @@ export const products = [
     categoryName: "Regular Fruit",
     price: "1600",
     discountprice: "3200",
+    toggleImage: "/images/orange.webp",
     rating: 4,
   },
   {
@@ -121,6 +133,7 @@ export const products = [
     categoryName: "Seasonal Fruit",
     price: "1700",
     discountprice: "3400",
+    toggleImage: "/images/white-berrey.webp",
     rating: 5,
   },
   {
@@ -130,6 +143,7 @@ export const products = [
     categoryName: "Seasonal Fruit",
     price: "1800",
     discountprice: "3600",
+    toggleImage: "/images/banana.jpg",
     rating: 3,
   },
   {
@@ -139,6 +153,7 @@ export const products = [
     categoryName: "Regular Fruit",
     price: "1300",
     discountprice: "2600",
+    toggleImage: "/images/pomelo.webp",
     rating: 5,
   },
   {
@@ -148,6 +163,7 @@ export const products = [
     categoryName: "Seasonal Fruit",
     price: "1900",
     discountprice: "3800",
+    toggleImage: "/images/gwava.webp",
     rating: 2,
   },
   {
@@ -157,6 +173,7 @@ export const products = [
     categoryName: "Regular Fruit",
     price: "2000",
     discountprice: "4000",
+    toggleImage: "/images/raddish.webp",
     rating: 1,
   },
   {
@@ -166,6 +183,7 @@ export const products = [
     categoryName: "Seasonal Fruit",
     price: "2000",
     discountprice: "4000",
+    toggleImage: "/images/toggleimg1.jpeg",
     rating: 3,
   },
   {
@@ -175,6 +193,7 @@ export const products = [
     categoryName: "Seasonal Fruit",
     price: "2000",
     discountprice: "400",
+    toggleImage: "/images/product8.webp",
     rating: 5,
   },
   {
@@ -184,6 +203,7 @@ export const products = [
     categoryName: "Regular Fruit",
     price: "1400",
     discountprice: "2800",
+    toggleImage: "/images/apple.webp",
     rating: 1,
   },
   {
@@ -193,6 +213,7 @@ export const products = [
     categoryName: "Seasonalr Fruit",
     price: "1700",
     discountprice: "3400",
+    toggleImage: "/images/anaar.webp",
     rating: 2,
   },
 ];
