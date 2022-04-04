@@ -1,3 +1,5 @@
+import { Action } from "history";
+
 const productReduce = (state, action) => {
   switch (action.type) {
     case "FETCH_PRODUCT_DATA":
@@ -57,6 +59,12 @@ const productReduce = (state, action) => {
       localStorage.removeItem("token");
       localStorage.removeItem("user");
       return { ...state, cartItem: [] };
+    case "GET_WISHLIST":
+      return { ...state, wishlistItem: action.payload };
+    case "ADD_TO_WISHLIST":
+      return { ...state, wishlistItem: action.payload };
+    case "REMOVE_FROM_WISHLIST":
+      return { ...state, wishlistItem: action.payload };
     default:
       return "Error";
   }

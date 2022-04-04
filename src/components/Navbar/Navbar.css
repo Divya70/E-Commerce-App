@@ -29,6 +29,12 @@
       color: var(--secondary-color);
 }
 
+.icon-badge {
+      width: 25px;
+      height: 25px;
+      top: -5px;
+}
+
 .nav-button .login-button {
       color: var(--secondary-color);
 }

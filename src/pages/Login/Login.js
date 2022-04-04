@@ -3,6 +3,7 @@ import axios from "axios";
 import { useAuth } from "../../Context/Auth-Context";
 import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
+import { Navbar } from "../../components";
 const Login = () => {
   const { authDispatch } = useAuth();
   const navigateProduct = useNavigate();
@@ -48,6 +49,7 @@ const Login = () => {
 
   return (
     <>
+      <Navbar />
       <div className="login-page-container">
         <h1 className="login-title">LOGIN</h1>
         <div className="login-form-cont">

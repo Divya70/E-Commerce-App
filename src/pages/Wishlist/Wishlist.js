@@ -1,18 +1,57 @@
-import React from "react";
+import React, { useEffect } from "react";
+import axios from "axios";
 import "./wishlist.css";
-import { Navbar } from "../../components/Navbar/Navbar";
-import { Products } from "../../components/Products/Products";
-import { ProductData } from "../../components/Products/ProductData";
+import { Link } from "react-router-dom";
+import { useProduct } from "../../Context/Product-Context";
+import { Navbar, Products } from "../../components";
+const token = localStorage.getItem("token");
 const Wishlist = () => {
+  const { state, dispatch } = useProduct();
+  const getProductInWishlist = async () => {
+    try {
+      const getwishlistResponse = await axios.get("/api/user/wishlist", {
+        headers: { authorization: token },
+      });
+      if (getwishlistResponse.status === 200) {
+        dispatch({
+          type: "GET_WISHLIST",
+          payload: getwishlistResponse.data.wishlist,
+        });
+      } else {
+        console.log("err:", getwishlistResponse);
+      }
+    } catch (error) {
+      console.log("Error:", error);
+    }
+  };
+  useEffect(() => {
+    getProductInWishlist();
+  }, []);
   return (
     <>
       <Navbar />
-      <h1 className="wishlist-heading">My WishList</h1>
-      <div className="product-card-cont">
-        {ProductData.slice(6, 12).map(({ item }) => {
-          return <Products key={item.id} item={item} />;
-        })}
-      </div>
+
+      {state.wishlistItem.length !== 0 ? (
+        <>
+          <h1 className="wishlist-heading">
+            My WishList ({state.wishlistItem.length})
+          </h1>
+          <div className="product-card-cont">
+            {state.wishlistItem.map((item) => {
+              return <Products key={item._id} item={item} />;
+            })}
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="empty-wishlist-cont">
+            <h1>Wishlist is Empty ☹</h1>
+            <Link to="/product" className="keep-shopping-link">
+              Keep Shopping
+            </Link>
+          </div>
+        </>
+      )}
     </>
   );
 };
