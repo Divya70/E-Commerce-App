@@ -13,7 +13,7 @@
 
 
 ## Tech Stack Used
-- REact
+- React
 - CSS
 
 ## Screenshots
