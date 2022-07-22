@@ -4,7 +4,7 @@ import { useProduct } from "../../Context/Product-Context";
 import { useAuth } from "../../Context/Auth-Context";
 const Navbar = () => {
   const { state, dispatch } = useProduct();
-  const { authState } = useAuth();
+  const { authState, authDispatch } = useAuth();
   return (
     <>
       <nav className="navigation-cont">
@@ -30,7 +30,7 @@ const Navbar = () => {
               <span className="icon-badge">{state.cartItem.length}</span>
             ) : null}
           </Link>
-          {authState.token === null ? (
+          {!authState.token ? (
             <div className="nav-button login-btn">
               <Link to="/login" className="login-button">
                 Login
@@ -39,7 +39,7 @@ const Navbar = () => {
           ) : (
             <div
               className="nav-button login-btn"
-              onClick={() => dispatch({ type: "LOGOUT" })}
+              onClick={() => authDispatch({ type: "LOGOUT" })}
             >
               <Link to="/login" className="login-button">
                 Logout

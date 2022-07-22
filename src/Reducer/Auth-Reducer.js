@@ -18,6 +18,14 @@ const authReducer = (authState, authAction) => {
         token: authAction.payload.token,
         user: authAction.payload.user,
       };
+    case "LOGOUT":
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+      return {
+        ...authState,
+        user: null,
+        token: null,
+      };
   }
 };
 export { authReducer };

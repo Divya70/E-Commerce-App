@@ -9,8 +9,8 @@ const AuthProvider = ({ children }) => {
     authDispatch({ type: "LOG_TOKEN", payload: { token, user } });
   }, []);
   const [authState, authDispatch] = useReducer(authReducer, {
-    token: "",
-    user: "",
+    token: localStorage.getItem("token") || "",
+    user: JSON.parse(localStorage.getItem("user")) || "",
   });
 
   return (
