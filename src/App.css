@@ -42,6 +42,10 @@
   --new-badge-color: #fff;
 
 }
+.Toastify__toast-container--top-right {
+  top: 5em !important;
+  right: 1em;
+}
 /* 
 iframe {
   pointer-events: none;

@@ -56,7 +56,8 @@ const productReduce = (state, action) => {
     case "REMOVE_FROM_CART":
       return { ...state, cartItem: action.payload };
     case "CLEAR_FROM_CART": {
-      clearCartHandler(payload);
+      clearCartHandler(action.payload);
+      console.log("payyyyyload", action.payload);
       return { ...state, cartItem: [] };
     }
     case "INCREASE_QUANTITY":
