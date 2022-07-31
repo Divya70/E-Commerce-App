@@ -1,5 +1,9 @@
-import { Action } from "history";
-
+import axios from "axios";
+const clearCartHandler = (token) => {
+  axios.delete("/api/user/cart/all", {
+    headers: { authorization: token },
+  });
+};
 const productReduce = (state, action) => {
   switch (action.type) {
     case "FETCH_PRODUCT_DATA":
@@ -51,6 +55,10 @@ const productReduce = (state, action) => {
     }
     case "REMOVE_FROM_CART":
       return { ...state, cartItem: action.payload };
+    case "CLEAR_FROM_CART": {
+      clearCartHandler(payload);
+      return { ...state, cartItem: [] };
+    }
     case "INCREASE_QUANTITY":
       return { ...state, cartItem: action.payload };
     case "DECREASE_QUANTITY":
