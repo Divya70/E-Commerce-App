@@ -1,6 +1,8 @@
 import { initilizeRazorpay } from "./initilizeRazorpay";
+import { toast } from "react-toastify";
 const makePayment = async ({ totalPrice, dispatch, token }) => {
   const res = await initilizeRazorpay();
+  const notify = (msg) => toast(msg);
   if (!res) {
     alert("Razorpay SDK Failed to load");
     return;
@@ -17,6 +19,7 @@ const makePayment = async ({ totalPrice, dispatch, token }) => {
 
     handler: function (response) {
       var id = response.razorpay_payment_id.slice(0, 8);
+      notify(`Payment is done successfully with orderno- ${id}`);
       dispatch({ type: "CLEAR_FROM_CART", payload: token });
     },
     prefill: {
