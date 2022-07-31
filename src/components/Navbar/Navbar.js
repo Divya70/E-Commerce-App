@@ -11,12 +11,6 @@ const Navbar = () => {
         <Link to="/" className="logo-link">
           <h1 className="name-of-site">Flavorsome</h1>
         </Link>
-        <div className="searchbar">
-          <span>
-            <i className="fa fa-search" aria-hidden="true"></i>
-          </span>
-          <input className="search-input" type="text" placeholder="Search" />
-        </div>
         <div className="nav-buttons-cont">
           <Link to="/wishlist" className="nav-button nav-icons-name">
             <i className="fas fa-heart nav-icon"></i>

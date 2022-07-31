@@ -1,8 +1,14 @@
 import React from "react";
+import { makePayment } from "../../checkout/makepayment";
 import { useProduct } from "../../../Context/Product-Context";
+import { useAuth } from "../../../Context/Auth-Context";
 import "./pricedetails.css";
 const PriceDetails = (qty) => {
-  const { state } = useProduct();
+  const { state, dispatch } = useProduct();
+  const { authState } = useAuth();
+  const {
+    authState: { token },
+  } = useAuth();
   const getPriceBill = (cartItem) => {
     const currentQty = cartItem.reduce(
       (acc, curr) => acc + Number(curr.qty),
@@ -44,7 +50,12 @@ const PriceDetails = (qty) => {
         <div className="save-price">
           You will have save Rs. {totalSaving} on this order
         </div>
-        <button className="place-order">PLACE ORDER</button>
+        <button
+          className="place-order"
+          onClick={() => makePayment({ totalPrice, dispatch, token })}
+        >
+          PLACE ORDER
+        </button>
       </div>
     </>
   );
